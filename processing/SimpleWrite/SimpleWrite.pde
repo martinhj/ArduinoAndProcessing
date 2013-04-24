@@ -28,7 +28,7 @@ void draw() {
   if (mouseOverRect() == true) {  // If mouse is over square,
     fill(204);                    // change color and
     myPort.write('H');              // send an H to indicate mouse is over square
-    delay(200);
+    delay(13);
     println("H...");
   } 
   else {                        // If mouse is not over square,
