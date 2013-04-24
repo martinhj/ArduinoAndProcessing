@@ -18,6 +18,6 @@ void loop() {
  } else {
    digitalWrite(ledPin, LOW); // Otherwise turn it OFF
  }
-   delay(100); // Wait 100 milliseconds for next reading
+    // Wait 100 milliseconds for next reading
  }
  
