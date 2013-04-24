@@ -1,7 +1,7 @@
 // Wiring/Arduino code:
 // Read data from the serial and turn ON or OFF a light depending on the value
  
-char val; // Data received from the serial port
+int val; // Data received from the serial port
 int ledPin = 13; // Set the pin to digital I/O 13
 int ledPins []  = {4, 5, 6, 7};
 unsigned long lastOn [] = {0, 0, 0, 0};
@@ -33,7 +33,7 @@ void loop() {
    		digitalWrite(ledPin, LOW); // Otherwise turn it OFF
  	}
     // Wait 100 milliseconds for next reading*/
-    lightOrNot();
+    lightOrNot(val);
     disengageAll();
     val = ' ';
  }
@@ -46,8 +46,11 @@ void loop() {
 }*/
 
 
-void lightOrNot(){
-	if (val == 'H')engage(0);
+void lightOrNot(int value) {
+	if (val == 0) engage(0);
+	if (val == 1) engage(1);
+	if (val == 2) engage(2);
+	if (val == 3) engage(3);
 }
 
 void engage(int i) {

@@ -9,7 +9,8 @@
 import processing.serial.*;
 
 Serial myPort;  // Create object from Serial class
-int val;        // Data received from the serial port
+char val;        // Data received from the serial port
+int testval;
 
 void setup() 
 {
@@ -27,9 +28,10 @@ void draw() {
   background(255);
   if (mouseOverRect() == true) {  // If mouse is over square,
     fill(204);                    // change color and
-    myPort.write('H');              // send an H to indicate mouse is over square
+    testval = ((int) (Math.random() * 4));
+    myPort.write(testval);              // send an H to indicate mouse is over square
     delay(13);
-    println("H...");
+    println(testval);
   } 
   else {                        // If mouse is not over square,
     fill(0);                      // change color and
